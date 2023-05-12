@@ -17,3 +17,14 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/guide', function () {
+    return view('guide');
+});
+
+Route::get('/student', function () {
+    return view('student');
+});
+
+Route::get('/teacher', function () {
+    return view('teacher');
+});

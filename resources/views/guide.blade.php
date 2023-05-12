@@ -41,14 +41,13 @@
     <main class="content">
 
         <div class="container">
-            <h1>Matematické príklady</h1>
-            <img src="{{ asset('img/welcome-gif.gif') }}" alt="description of myimage" class="wlm-img" width="250px">
+            <h1>Návod</h1>
+            <h2>Tu bude návod, ktorý pojde vygenerovať do PDF súboru</h2>
         </div>
     </main>
     <footer>
         <div class="container">VR-AŽ-TS-MR &copy; 2023</div>
     </footer>
 </body>
-
 
 </html>

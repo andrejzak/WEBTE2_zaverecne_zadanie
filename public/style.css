@@ -56,6 +56,7 @@
      font-weight: 900;
  }
 
+
  .container h1:before {
      content: "Záverečné zadanie";
      position: absolute;
@@ -67,4 +68,101 @@
      z-index: -1;
      width: 100%;
      letter-spacing: 0.2rem;
+ }
+
+ @media (max-width: 771px) {
+     .container h1 {
+         font-size: 2.5rem;
+         color: #6370B3;
+         margin-top: 4rem;
+         margin-bottom: 40px;
+         text-align: center;
+         position: relative;
+         z-index: 10;
+         text-transform: uppercase;
+         font-weight: 900;
+     }
+
+     .container h1:before {
+         content: "Záverečné zadanie";
+         position: absolute;
+         left: 50%;
+         top: 5px;
+         transform: translate(-50%, -50%);
+         font-size: 2.5rem;
+         color: #b4c9d4;
+         z-index: -1;
+         width: 100%;
+         letter-spacing: 0.2rem;
+     }
+ }
+
+ @media (max-width: 516px) {
+     .container h1 {
+         font-size: 2rem;
+         color: #6370B3;
+         margin-top: 4rem;
+         margin-bottom: 40px;
+         text-align: center;
+         position: relative;
+         z-index: 10;
+         text-transform: uppercase;
+         font-weight: 900;
+     }
+
+     .container h1:before {
+         content: "Záverečné zadanie";
+         position: absolute;
+         left: 50%;
+         top: 5px;
+         transform: translate(-50%, -50%);
+         font-size: 2rem;
+         color: #b4c9d4;
+         z-index: -1;
+         width: 100%;
+         letter-spacing: 0.2rem;
+     }
+ }
+
+ @media (max-width: 425px) {
+     .container h1 {
+         font-size: 2rem;
+         color: #6370B3;
+         margin-top: 4rem;
+         margin-bottom: 40px;
+         text-align: center;
+         position: relative;
+         z-index: 10;
+         text-transform: uppercase;
+         font-weight: 900;
+     }
+
+     .container h1:before {
+         content: "Záverečné zadanie";
+         position: absolute;
+         left: 50%;
+         top: 20px;
+         transform: translate(-50%, -50%);
+         font-size: 2rem;
+         color: #b4c9d4;
+         z-index: -1;
+         width: 100%;
+         letter-spacing: 0.2rem;
+     }
+ }
+
+ .wlm-img {
+     display: flex;
+     margin: 10px auto;
+
+ }
+
+
+
+ .btn-info {
+     background-color: #6370B3 !important;
+     color: white !important;
+     border: 2px solid #6370B3 !important;
+     width: 250px !important;
+     margin: 5px auto;
  }

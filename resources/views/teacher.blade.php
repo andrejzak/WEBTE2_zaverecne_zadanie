@@ -41,8 +41,8 @@
     <main class="content">
 
         <div class="container">
-            <h1>Matematické príklady</h1>
-            <img src="{{ asset('img/welcome-gif.gif') }}" alt="description of myimage" class="wlm-img" width="250px">
+            <h1>Prihlásený - Učiteľ</h1>
+            
         </div>
     </main>
     <footer>
