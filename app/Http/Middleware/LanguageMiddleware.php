@@ -21,7 +21,6 @@ class LanguageMiddleware
   public function handle(Request $request, Closure $next)
   {
     $preferredLanguage = $request->getPreferredLanguage();
-    var_dump($preferredLanguage);
     $language = $request->route()->parameters()['lang'];
     if (!in_array($language, Language::values())) {
       throw new HttpResponseException(response()->json(['error' => 'Language not found'], Response::HTTP_NOT_FOUND));

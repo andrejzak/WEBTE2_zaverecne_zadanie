@@ -37,7 +37,7 @@ class AuthController extends Controller
       return $this->error(500);
     }
     return $this->success([
-      'user' => $user,
+      'user' => $user->toArray(),
       'token' => $user->createToken('main')->plainTextToken
     ], 201);
   }
