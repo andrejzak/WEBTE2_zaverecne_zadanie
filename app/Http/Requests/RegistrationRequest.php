@@ -2,8 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\Models\Enums\Role;
-use Illuminate\Validation\Rules\Enum;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
@@ -41,10 +39,6 @@ class RegistrationRequest extends FormRequest
           ->mixedCase()
           ->numbers(),
         'max:100',
-      ],
-      "role" => [
-        "required",
-        new Enum(Role::class)
       ]
     ];
   }
@@ -52,9 +46,6 @@ class RegistrationRequest extends FormRequest
   protected function failedValidation(Validator $validator)
   {
     $errors = $validator->errors();
-    throw new HttpResponseException(response()->json([
-      'message' => '',
-      'errors' => $errors,
-    ], Response::HTTP_BAD_REQUEST));
+    return redirect()->back()->withErrors($errors);
   }
 }

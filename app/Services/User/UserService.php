@@ -20,7 +20,7 @@ class UserService implements UserServiceInterface
         'last_name' => $data['last_name'],
         'password' => Hash::make($data['password']),
         'email' => $data['email'],
-        'role' => $data['role']
+        'role' => 'student'
       ]);
     } catch (Throwable $e) {
       DB::rollBack();

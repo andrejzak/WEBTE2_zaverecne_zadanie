@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Enums\Role;
 use App\Traits\HttpResponses;
 use App\Http\Requests\LoginRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Dotenv\Exception\ValidationException;
 use App\Http\Requests\RegistrationRequest;
 use App\Services\User\UserServiceInterface;
 use App\Exceptions\InternalServerErrorException;
@@ -29,17 +31,14 @@ class AuthController extends Controller
    */
   public function registration(RegistrationRequest $request)
   {
-    $data = $request->validated();
     $user = (object)[];
+    $data = $request->validated();
     try {
       $user = $this->userService->createUser($data);
     } catch (InternalServerErrorException $e) {
-      return $this->error(500);
+      return redirect()->back();
     }
-    return $this->success([
-      'user' => $user->toArray(),
-      'token' => $user->createToken('main')->plainTextToken
-    ], 201);
+    return redirect()->route('student')->with('user', $user);
   }
 
   /**
@@ -52,16 +51,16 @@ class AuthController extends Controller
   {
     $credentials = $request->validated();
     if (!Auth::attempt($credentials)) {
-      return $this->error(401, [
-        'email' => "Nesprávny email alebo heslo"
-      ]);
+      return redirect()->back()->withErrors(['email' => "Nesprávny email alebo heslo"]);
     }
     $user = Auth::user();
     $user->tokens()->delete();
-    return $this->success([
-      'user' => $user,
-      'token' => $user->createToken('main')->plainTextToken
-    ], 200);
+    $token = $user->createToken('main')->plainTextToken;
+    if ($user->role === Role::Teacher) {
+      return redirect()->route('teacher')->with('user', $user);
+    } else {
+      return redirect()->route('student')->with('user', $user);
+    }
   }
 
   /**
