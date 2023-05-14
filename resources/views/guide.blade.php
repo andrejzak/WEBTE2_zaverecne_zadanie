@@ -2,7 +2,7 @@
 
 @section('guide')
 <div class="container">
-    <h1>Návod</h1>
-    <h2>Tu bude návod, ktorý pojde vygenerovať do PDF súboru</h2>
+    <h1>{{ __('messages.guide') }}</h1>
+    <h5 class="guide-header">{{ __('messages.guide-h5') }}</h5>
 </div>
 @endsection

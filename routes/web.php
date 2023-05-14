@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,3 +42,10 @@ Route::get('/registration', function () {
 Route::post('/submit-registration', [AuthController::class, 'registration'])->name('registration');
 
 Route::post('/submit-login', [AuthController::class, 'login'])->name('login');
+
+Route::get('language/{language}', function ($language) {
+    if (in_array($language, ['sk', 'en'])) {
+        Session::put('applocale', $language);
+    }
+    return redirect()->back();
+})->name('language.change');

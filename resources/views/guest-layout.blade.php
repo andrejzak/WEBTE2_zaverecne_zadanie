@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
 
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset("css/style.css") }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <!-- Include Flag Icon CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
@@ -28,13 +30,13 @@
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{url('/guide')}}">Návod</a>
+                            <a class="nav-link" aria-current="page" href="{{url('/guide')}}">{{ __('messages.guide') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{url('/login')}}">Prihlásenie</a>
+                            <a class="nav-link" aria-current="page" href="{{url('/login')}}">{{ __('messages.login') }}</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" aria-current="page" href="{{url('/registration')}}">Registrácia</a>
+                          <a class="nav-link" aria-current="page" href="{{url('/registration')}}">{{ __('messages.registration') }}</a>
                       </li>
                     </ul>
                 </div>
@@ -42,7 +44,13 @@
         </nav>
     </header>
 
-    <main class="content">      
+    
+
+    <main class="content">  
+      <div class="language">
+          <a href="{{ route('language.change', 'sk') }}"><span class="flag-icon flag-icon-sk"></span></a>
+          <a href="{{ route('language.change', 'en') }}"><span class="flag-icon flag-icon-gb"></span></a>
+      </div>
         @yield('login')
         @yield('registration')
         @yield('student')
