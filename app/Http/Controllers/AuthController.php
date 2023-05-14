@@ -8,6 +8,7 @@ use App\Http\Requests\LoginRequest;
 use Illuminate\Support\Facades\App;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Dotenv\Exception\ValidationException;
 use App\Http\Requests\RegistrationRequest;
 use App\Services\User\UserServiceInterface;
@@ -39,6 +40,7 @@ class AuthController extends Controller
     } catch (InternalServerErrorException $e) {
       return redirect()->back();
     }
+    Session::put('loggedin', true);
     return redirect()->route('student')->with('user', $user);
   }
 
@@ -59,6 +61,8 @@ class AuthController extends Controller
     $user = Auth::user();
     $user->tokens()->delete();
     $token = $user->createToken('main')->plainTextToken;
+    Session::put('loggedin', true);
+    // dd(Session::get('loggedin'));
     if ($user->role === Role::Teacher) {
       return redirect()->route('teacher')->with('user', $user);
     } else {

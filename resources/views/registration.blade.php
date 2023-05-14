@@ -3,7 +3,7 @@
 @section('registration')
 <div class="container">
   <h1 class="text-center">{{ __('messages.registration') }}</h1>
-  <form id="form" method="POST" action={{ route('registration') }} class="my-form row g-3">
+  <form id="form" method="POST" action={{ route('registration-form') }} class="my-form row g-3">
     @csrf
     <div class="col-md-12 form-group">
       <label for="firstName" class="form-label">{{ __('messages.name') }}</label>

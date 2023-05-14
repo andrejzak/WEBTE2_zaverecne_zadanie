@@ -3,6 +3,7 @@ return [
     'guide' => 'Guide',
     'welcome' => 'Mathematical tasks',
     'login' => 'Login',
+    'logout' => 'Logout',
     'registration' => 'Registration',
     'signin' => 'Sign in',
     'signup' => 'Sign up',

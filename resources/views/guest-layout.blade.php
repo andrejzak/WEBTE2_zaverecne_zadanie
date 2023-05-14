@@ -19,48 +19,58 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="{{url('/')}}">WEBTE 2</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{url('/guide')}}">{{ __('messages.guide') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{url('/login')}}">{{ __('messages.login') }}</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" aria-current="page" href="{{url('/registration')}}">{{ __('messages.registration') }}</a>
+  @php
+    use Illuminate\Support\Facades\Session;
+  @endphp
+  <header>
+      <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+          <div class="container-fluid">
+              <a class="navbar-brand" href="{{url('/')}}">WEBTE 2</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                  aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarText">
+                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{url('/guide')}}">{{ __('messages.guide') }}</a>
+                    </li>
+                    @if (session()->get('loggedin'))
+                      @php
+                        session()->forget('loggedin');
+                      @endphp
+                      <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{url('/login')}}">{{ __('messages.logout') }}</a>
                       </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    
-
-    <main class="content">  
-      <div class="language">
-          <a href="{{ route('language.change', 'sk') }}"><span class="flag-icon flag-icon-sk"></span></a>
-          <a href="{{ route('language.change', 'en') }}"><span class="flag-icon flag-icon-gb"></span></a>
-      </div>
-        @yield('login')
-        @yield('registration')
-        @yield('student')
-        @yield('teacher')
-        @yield('guide')
-        @yield('main')
-    </main>
-    <footer>
-        <div class="container">VR-AŽ-TS-MR &copy; 2023</div>
-    </footer>
+                    @endif
+                    @if(!session()->get('loggedin'))
+                      <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{url('/login')}}">{{ __('messages.login') }}</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{url('/registration')}}">{{ __('messages.registration') }}</a>
+                      </li>
+                    @endif
+                  </ul>
+              </div>
+          </div>
+      </nav>
+  </header>
+  <main class="content">  
+    <div class="language">
+        <a href="{{ route('language.change', 'sk') }}"><span class="flag-icon flag-icon-sk"></span></a>
+        <a href="{{ route('language.change', 'en') }}"><span class="flag-icon flag-icon-gb"></span></a>
+    </div>
+      @yield('login')
+      @yield('registration')
+      @yield('student')
+      @yield('teacher')
+      @yield('guide')
+      @yield('main')
+  </main>
+  <footer>
+      <div class="container">VR-AŽ-TS-MR &copy; 2023</div>
+  </footer>
 </body>
 
 

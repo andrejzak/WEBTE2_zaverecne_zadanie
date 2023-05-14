@@ -3,6 +3,7 @@ return [
     'guide' => 'Návod',
     'welcome' => 'Matematické príklady',
     'login' => 'Prihlásenie',
+    'logout' => 'Odhlásenie',
     'registration' => 'Registrácia',
     'signin' => 'Prihlásiť sa',
     'signup' => 'Registrovať sa',

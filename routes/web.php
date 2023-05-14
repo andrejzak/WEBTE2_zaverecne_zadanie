@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 Route::get('/login', function () {
     return view('login');
-});
+})->name('login');
 
 Route::get('/guide', function () {
     return view('guide');
@@ -33,15 +33,15 @@ Route::get('/student', function () {
 
 Route::get('/teacher', function () {
     return view('teacher');
-})->name('teacher');
+})->name('teacher')->middleware('auth');;
 
 Route::get('/registration', function () {
     return view('registration');
 });
 
-Route::post('/submit-registration', [AuthController::class, 'registration'])->name('registration');
+Route::post('/submit-registration', [AuthController::class, 'registration'])->name('registration-form');
 
-Route::post('/submit-login', [AuthController::class, 'login'])->name('login');
+Route::post('/submit-login', [AuthController::class, 'login'])->name('login-form');
 
 Route::get('language/{language}', function ($language) {
     if (in_array($language, ['sk', 'en'])) {

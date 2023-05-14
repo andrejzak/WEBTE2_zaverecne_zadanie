@@ -3,7 +3,7 @@
 @section('login')
 <div class="container">
   <h1 class="text-center">{{ __('messages.login') }}</h1>
-  <form id="form" class="my-form row g-3" method="POST" action={{ route('login') }}>
+  <form id="form" class="my-form row g-3" method="POST" action={{ route('login-form') }}>
     @csrf
     <div class="col-md-12 form-group">
       <label for="email" class="form-label ">Email</label>
