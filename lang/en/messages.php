@@ -11,4 +11,6 @@ return [
     'password' => 'Password',
     'confirm' => 'Confirm password',
     'guide-h5' => 'Student/Teacher Use of Application',
+    'student'=>'Logged in - Student',
+    'teacher'=>'Logged in - Teacher',
 ];

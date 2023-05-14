@@ -11,4 +11,6 @@ return [
     'password' => 'Heslo',
     'confirm' => 'Potvrdenie hesla',
     'guide-h5' => 'Používanie aplikácie zo strany študenta/učiteľa',
+    'student'=>'Prihlásený - Študent',
+    'teacher'=>'Prihlásený - Učiteľ',
 ];
