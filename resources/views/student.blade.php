@@ -5,11 +5,11 @@
     <h1>{{ __('messages.student') }}</h1>
     <div class="row align-items-center justify-content-center">
         <div class="col-lg-12 col-md-12 text-center">
-            <button type="button" class="btn btn-info">Vygenerovanie príkladov</button>
+            <button type="button" class="btn btn-info">{{ __('messages.student-btn-1') }}</button>
         </div>
 
         <div class="col-lg-12 col-md-12 text-center">
-            <button type="button" class="btn btn-info">Prehľad zadaných úloh</button>
+            <button type="button" class="btn btn-info">{{ __('messages.student-btn-2') }}</button>
         </div>
     </div>
 </div>

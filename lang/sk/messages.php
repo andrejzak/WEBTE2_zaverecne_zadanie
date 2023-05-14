@@ -13,5 +13,16 @@ return [
     'guide-h5' => 'Používanie aplikácie zo strany študenta/učiteľa',
     'student' => 'Prihlásený - Študent',
     'teacher' => 'Prihlásený - Učiteľ',
-    'invalid-credentials' => "Nesprávny email alebo heslo."
+    'invalid-credentials' => "Nesprávny email alebo heslo.",
+    'csv-button'=>'Export do CSV',
+    'pdf-button'=>'Export do PDF',
+    'student-btn-1'=>'Vygenerovanie príkladov',
+    'student-btn-2'=>'Prehľad zadaných úloh',
+    'guide-text'=>'ŠTUDENT sa zaregistruje na portáli. Po úspešnej registrácií sa bude môcť prihlásiť.
+                   Po prihlásení bude mať k dispozícii dve funkcionality. Po kliknutí na tlačidlo "Vygenerovanie príkladov" sa
+                   študentovi vygenerujú príklady, ktoré môže začať riešiť. Ako druhé si študent môže pozrieť zadané/vygenerované úlohy po kliknutí na tlačidlo "Prehľad zadaných úloh". Tu študent bude vidieť, ktoré úlohy odovzdal a ktoré nie.
+
+                   UČITEĽ sa zaregistruje na portáli. Po úspešnej registrácií sa bude môcť prihlásiť. Učiteľ bude mať možnosť definovať, z ktorých latexových súborov si bude môcť študent generovať príklady na riešenie.
+                   
+                   Aj ŠTUDENT aj UČITEĽ si môžu v pravom hornom portálu prepínať medzi uvedenými jazykmi.'
 ];
