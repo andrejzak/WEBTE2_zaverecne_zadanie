@@ -2,11 +2,10 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
-use Symfony\Component\HttpFoundation\Response;
-use Illuminate\Http\Exceptions\HttpResponseException;
 
 class RegistrationRequest extends FormRequest
 {
@@ -45,6 +44,8 @@ class RegistrationRequest extends FormRequest
 
   protected function failedValidation(Validator $validator)
   {
+    $language = session('applocale', 'en');
+    App::setLocale($language);
     $errors = $validator->errors();
     return redirect()->back()->withErrors($errors);
   }

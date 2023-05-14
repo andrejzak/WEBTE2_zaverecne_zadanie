@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Enums\Role;
 use App\Traits\HttpResponses;
 use App\Http\Requests\LoginRequest;
+use Illuminate\Support\Facades\App;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Dotenv\Exception\ValidationException;
@@ -51,7 +52,9 @@ class AuthController extends Controller
   {
     $credentials = $request->validated();
     if (!Auth::attempt($credentials)) {
-      return redirect()->back()->withErrors(['email' => "Nesprávny email alebo heslo"]);
+      $language = session('applocale', 'en');
+      App::setLocale($language);
+      return redirect()->back()->withErrors(['email' => trans("messages.invalid-credentials")]);
     }
     $user = Auth::user();
     $user->tokens()->delete();

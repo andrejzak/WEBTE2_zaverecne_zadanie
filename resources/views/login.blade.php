@@ -12,7 +12,7 @@
     </div>
     <div class="col-md-12 form-group">
       <label for="password" class="form-label">{{ __('messages.password') }}</label>
-      <input type="password" name="password" class="form-control">
+      <input id="password" type="password" name="password" class="form-control">
       <span class="text-danger">@error("password") {{ $message }} @enderror</span>    
     </div>
     <button type="submit" class="btn btn-info col-md-12">{{ __('messages.signin') }}</button>

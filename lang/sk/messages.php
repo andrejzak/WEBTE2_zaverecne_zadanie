@@ -11,4 +11,5 @@ return [
     'password' => 'Heslo',
     'confirm' => 'Potvrdenie hesla',
     'guide-h5' => 'Používanie aplikácie zo strany študenta/učiteľa',
+    'invalid-credentials' => "Nesprávny email alebo heslo."
 ];

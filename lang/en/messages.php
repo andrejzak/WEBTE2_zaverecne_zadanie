@@ -11,4 +11,5 @@ return [
     'password' => 'Password',
     'confirm' => 'Confirm password',
     'guide-h5' => 'Student/Teacher Use of Application',
+    'invalid-credentials' => "Incorrect email or password."
 ];
