@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ExportController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 
@@ -49,3 +50,6 @@ Route::get('language/{language}', function ($language) {
     }
     return redirect()->back();
 })->name('language.change');
+
+Route::get('/export/csv', [ExportController::class, 'exportCsv'])->name('export.csv');
+Route::get('/export/pdf', [ExportController::class, 'exportPdf'])->name('export.pdf');
