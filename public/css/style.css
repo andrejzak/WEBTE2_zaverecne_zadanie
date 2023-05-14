@@ -58,7 +58,6 @@
 
 
  .container h1:before {
-     content: "Záverečné zadanie";
      position: absolute;
      left: 50%;
      top: 5px;
@@ -68,6 +67,14 @@
      z-index: -1;
      width: 100%;
      letter-spacing: 0.2rem;
+ }
+
+ html[lang="sk"] .container h1:before {
+     content: "Záverečné zadanie";
+ }
+
+ html[lang="en"] .container h1:before {
+     content: "Final Assignment";
  }
 
  @media (max-width: 771px) {
@@ -175,4 +182,15 @@
      display: flex;
      flex-direction: column;
      align-items: center;
+ }
+
+ .language {
+     display: flex;
+     justify-content: flex-end;
+     margin: 20px 20px;
+ }
+
+ .flag-icon {
+     font-size: 2rem;
+     margin-right: 10px;
  }

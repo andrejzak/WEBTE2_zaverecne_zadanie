@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +37,10 @@ Route::get('/teacher', function () {
 Route::get('/registration', function () {
     return view('registration');
 });
+
+Route::get('language/{language}', function ($language) {
+    if (in_array($language, ['sk', 'en'])) {
+        Session::put('applocale', $language);
+    }
+    return redirect()->back();
+})->name('language.change');
