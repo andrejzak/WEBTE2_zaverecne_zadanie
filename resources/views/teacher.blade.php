@@ -2,6 +2,6 @@
 
 @section('teacher')
 <div class="container">
-    <h1>Prihlásený - Učiteľ</h1>  
+    <h1>{{ __('messages.teacher') }}</h1>  
 </div>
 @endsection

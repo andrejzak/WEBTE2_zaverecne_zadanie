@@ -194,7 +194,11 @@
      font-size: 2rem;
      margin-right: 10px;
  }
- 
+
  .guide-header {
-    text-align: center;
-}
+     text-align: center;
+ }
+
+ .text-danger {
+     max-width: 250px;
+ }
