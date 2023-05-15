@@ -1,6 +1,6 @@
 <?php
 return [
-    'dashboard' => 'dashboard',
+    'dashboard' => 'Dashboard',
     'guide' => 'Guide',
     'welcome' => 'Mathematical tasks',
     'login' => 'Login',
@@ -24,7 +24,7 @@ return [
                     After logging in, he will have two functionalities available. After clicking the button "Generate examples" se
                     they generate examples for the student to start solving. Secondly, the student can view the assigned/generated assignments by clicking on the "Overview of assigned assignments" button. Here, the student will see which assignments he submitted and which he did not.
                     
-                    TEACHER registers on the portal. After successful registration, he will be able to log in. The teacher will be able to define from which latex files the student will be able to generate examples for the solution.
+                    TEACHER will receive login information. After filling in correctly, he will log in to the portal. The teacher will be able to define from which latex files the student will be able to generate examples for the solution.
                    
                     Both STUDENT and TEACHER can switch between the listed languages in the upper right portal.'
 ];

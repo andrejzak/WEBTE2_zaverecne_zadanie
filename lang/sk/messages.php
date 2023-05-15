@@ -24,7 +24,7 @@ return [
                    Po prihlásení bude mať k dispozícii dve funkcionality. Po kliknutí na tlačidlo "Vygenerovanie príkladov" sa
                    študentovi vygenerujú príklady, ktoré môže začať riešiť. Ako druhé si študent môže pozrieť zadané/vygenerované úlohy po kliknutí na tlačidlo "Prehľad zadaných úloh". Tu študent bude vidieť, ktoré úlohy odovzdal a ktoré nie.
 
-                   UČITEĽ sa zaregistruje na portáli. Po úspešnej registrácií sa bude môcť prihlásiť. Učiteľ bude mať možnosť definovať, z ktorých latexových súborov si bude môcť študent generovať príklady na riešenie.
+                   UČITEĽ dostane prihlasovacie údaje. Po správnom vyplnení sa príhlási do portálu. Učiteľ bude mať možnosť definovať, z ktorých latexových súborov si bude môcť študent generovať príklady na riešenie.
                    
                    Aj ŠTUDENT aj UČITEĽ si môžu v pravom hornom portálu prepínať medzi uvedenými jazykmi.'
 ];
