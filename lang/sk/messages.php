@@ -1,5 +1,6 @@
 <?php
 return [
+    'dashboard' => 'Ovládací panel',
     'guide' => 'Návod',
     'welcome' => 'Matematické príklady',
     'login' => 'Prihlásenie',

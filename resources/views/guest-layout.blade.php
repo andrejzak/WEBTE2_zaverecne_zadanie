@@ -19,11 +19,11 @@
 </head>
 
 <body>
-  @php
-    use Illuminate\Support\Facades\Session;
-  @endphp
   <header>
       <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+          <form id="logout-form" action="{{ route('logout-form') }}" method="POST" style="display: none;">
+            @csrf
+          </form>
           <div class="container-fluid">
               <a class="navbar-brand" href="{{url('/')}}">WEBTE 2</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -35,15 +35,22 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="{{url('/guide')}}">{{ __('messages.guide') }}</a>
                     </li>
-                    @if (session()->get('loggedin'))
-                      @php
-                        session()->forget('loggedin');
-                      @endphp
+                    @if(Auth::user() && Auth::user()->role->value === "student")
                       <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{{url('/login')}}">{{ __('messages.logout') }}</a>
+                        <a class="nav-link" aria-current="page" href="{{url('/student')}}">{{ __('messages.dashboard') }}</a>
                       </li>
                     @endif
-                    @if(!session()->get('loggedin'))
+                    @if(Auth::user() && Auth::user()->role->value === "teacher")
+                      <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{url('/teacher')}}">{{ __('messages.dashboard') }}</a>
+                      </li>
+                    @endif
+                    @if (Auth::user())
+                      <li class="nav-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <a class="nav-link" aria-current="page" href="#">{{ __('messages.logout') }}</a>
+                      </li>                  
+                    @endif
+                    @if(!Auth::user())
                       <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="{{url('/login')}}">{{ __('messages.login') }}</a>
                       </li>
@@ -72,6 +79,4 @@
       <div class="container">VR-AŽ-TS-MR &copy; 2023</div>
   </footer>
 </body>
-
-
 </html>

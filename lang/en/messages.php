@@ -1,5 +1,6 @@
 <?php
 return [
+    'dashboard' => 'dashboard',
     'guide' => 'Guide',
     'welcome' => 'Mathematical tasks',
     'login' => 'Login',

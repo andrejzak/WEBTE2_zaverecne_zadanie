@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\ExportController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ExportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,27 +18,42 @@ use Illuminate\Support\Facades\Session;
 
 Route::get('/', function () {
     return view('main');
-});
-
-Route::get('/login', function () {
-    return view('login');
-})->name('login');
+})->name('main');
 
 Route::get('/guide', function () {
     return view('guide');
+})->name('guide');
+
+//routes which should not be accessible when user is logged in
+Route::group(['middleware' => 'unauth'], function () {
+    Route::get('/login', function () {
+        return view('login');
+    })->name('login');
+
+    Route::get('/registration', function () {
+        return view('registration');
+    });
 });
 
-Route::get('/student', function () {
-    return view('student');
-})->name('student');
+//routes for authorized users
+Route::group(['middleware' => 'auth'], function () {
 
-Route::get('/teacher', function () {
-    return view('teacher');
-})->name('teacher')->middleware('auth');;
+    //routes for students
+    Route::group(['middleware' => 'role:student'], function () {
+        Route::get('/student', function () {
+            return view('student');
+        })->name('student');
+    });
 
-Route::get('/registration', function () {
-    return view('registration');
+    //routes for teacher
+    Route::group(['middleware' => 'role:teacher'], function () {
+        Route::get('/teacher', function () {
+            return view('teacher');
+        })->name('teacher');
+    });
 });
+
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout-form');
 
 Route::post('/submit-registration', [AuthController::class, 'registration'])->name('registration-form');
 

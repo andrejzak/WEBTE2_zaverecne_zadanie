@@ -3,21 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Enums\Role;
-use App\Traits\HttpResponses;
 use App\Http\Requests\LoginRequest;
 use Illuminate\Support\Facades\App;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
-use Dotenv\Exception\ValidationException;
 use App\Http\Requests\RegistrationRequest;
 use App\Services\User\UserServiceInterface;
 use App\Exceptions\InternalServerErrorException;
 
 class AuthController extends Controller
 {
-  use HttpResponses;
-
   private UserServiceInterface $userService;
 
   public function __construct(UserServiceInterface $userService)
@@ -40,7 +35,6 @@ class AuthController extends Controller
     } catch (InternalServerErrorException $e) {
       return redirect()->back();
     }
-    Session::put('loggedin', true);
     return redirect()->route('student')->with('user', $user);
   }
 
@@ -59,10 +53,6 @@ class AuthController extends Controller
       return redirect()->back()->withErrors(['email' => trans("messages.invalid-credentials")]);
     }
     $user = Auth::user();
-    $user->tokens()->delete();
-    $token = $user->createToken('main')->plainTextToken;
-    Session::put('loggedin', true);
-    // dd(Session::get('loggedin'));
     if ($user->role === Role::Teacher) {
       return redirect()->route('teacher')->with('user', $user);
     } else {
@@ -77,17 +67,7 @@ class AuthController extends Controller
    */
   public function logout()
   {
-    Auth::user()->currentAccessToken()->delete();
-    return $this->success([], 200);
-  }
-
-  /**
-   * Get authenticate user.
-   *
-   * @return Illuminate\Http\JsonResponse
-   */
-  public function authUser()
-  {
-    return $this->success(Auth::user(), 200);
+    Auth::logout();
+    return redirect()->route('login');
   }
 }
