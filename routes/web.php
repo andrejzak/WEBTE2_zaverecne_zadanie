@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ExportController;
+use App\Http\Controllers\LatexFileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,9 +48,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     //routes for teacher
     Route::group(['middleware' => 'role:teacher'], function () {
-        Route::get('/teacher', function () {
-            return view('teacher');
-        })->name('teacher');
+        Route::get('/teacher', [LatexFileController::class, 'showFiles'])->name('teacher');
     });
 });
 
@@ -68,3 +67,4 @@ Route::get('language/{language}', function ($language) {
 
 Route::get('/export/csv', [ExportController::class, 'exportCsv'])->name('export.csv');
 Route::get('/export/pdf', [ExportController::class, 'exportPdf'])->name('export.pdf');
+Route::post('/addFile', [LatexFileController::class, 'addFile'])->name('addFile');
