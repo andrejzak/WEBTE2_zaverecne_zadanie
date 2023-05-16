@@ -30,12 +30,24 @@ class LatexFileController extends Controller
         return back()->with('success', 'Súbor bol pridaný.');
     }
 
-    public function generateRandomTask()
-    {
+    public function showAvailableTaskSets() {
         $currentDate = date('Y-m-d');
         $files = LatexFile::where('start_date', '<=', $currentDate)
                       ->orWhereNull('start_date')
                       ->get();
+    
+        // Extrahovanie názvov sád úloh z každého súboru a uloženie ich do poľa.
+        $taskSets = [];
+        foreach ($files as $file) {
+            $taskSets[] = $file;
+        }
+        return view('student', ['taskSets' => $taskSets]);
+    }
+
+    public function generateRandomTask(Request $request)
+    {
+        $selectedFiles = $request->input('selectedFiles');
+        $files = LatexFile::whereIn('id', $selectedFiles)->get();
 
         // Extrahovanie príkladov z každého súboru a uloženie ich do poľa.
         $tasksAndSolutions = [];
@@ -85,6 +97,11 @@ class LatexFileController extends Controller
             $randomTaskImages = '';
         }
 
-        return view('student', ['task' => $randomTask, 'solution' => $randomSolution, 'taskId' => $randomTaskId, 'image' => $randomTaskImages]);
+        //return view('student', ['task' => $randomTask, 'solution' => $randomSolution, 'taskId' => $randomTaskId, 'image' => $randomTaskImages]);
+        return redirect()->route('student.generate')
+            ->with('task', $randomTask)
+            ->with('solution', $randomSolution)
+            ->with('taskId', $randomTaskId)
+            ->with('image', $randomTaskImages);
     }
 }

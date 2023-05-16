@@ -68,4 +68,6 @@ Route::get('language/{language}', function ($language) {
 Route::get('/export/csv', [ExportController::class, 'exportCsv'])->name('export.csv');
 Route::get('/export/pdf', [ExportController::class, 'exportPdf'])->name('export.pdf');
 Route::post('/addFile', [LatexFileController::class, 'addFile'])->name('addFile');
-Route::get('/student/generate', [LatexFileController::class, 'generateRandomTask'])->name('generateRandomTask');
+Route::get('/student/generate', function () {return view('student');})->name('student.generate');
+Route::get('/student', [LatexFileController::class, 'showAvailableTaskSets'])->name('showAvailableTaskSets');
+Route::post('/generateRandomTask', [LatexFileController::class, 'generateRandomTask'])->name('generateRandomTask');
