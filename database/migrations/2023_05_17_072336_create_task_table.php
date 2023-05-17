@@ -21,6 +21,7 @@ return new class extends Migration
             $table->double('points_given')->nullable();
             $table->string('task_image');
             $table->string('solution');
+            $table->string('student_solution')->nullable();
             $table->timestamps();
         });
     }

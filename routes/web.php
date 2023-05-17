@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ExportController;
 use App\Http\Controllers\LatexFileController;
 use App\Http\Controllers\TasksController;
+use App\Http\Controllers\TeacherController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,12 +48,16 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/generateRandomTask', [LatexFileController::class, 'generateRandomTask'])->name('generateRandomTask');
         Route::get('/tasks/accepted', [TasksController::class, 'showAcceptedTasks'])->name('tasks.accepted');
         Route::get('/task/{task_id}', [TasksController::class, 'showTask'])->name('task.show');
+        Route::post('/tasks/{taskId}/submit-solution', [TasksController::class, 'submitSolution'])->name('submitSolution');
     });
 
     //routes for teacher
     Route::group(['middleware' => 'role:teacher'], function () {
         Route::get('/teacher', [LatexFileController::class, 'showFiles'])->name('teacher');
         Route::post('/addFile', [LatexFileController::class, 'addFile'])->name('addFile');
+        Route::get('/teacher/students-overview', [TeacherController::class, 'showStudentOverview'])->name('showStudentOverview');
+        Route::get('/teacher/student-detail/{id}', [TeacherController::class, 'showStudentDetail'])->name('showStudentDetail');
+        Route::get('/teacher/task-teacher-detail/{id}', [TeacherController::class, 'showTaskDetail'])->name('showTaskDetail');
     });
 });
 

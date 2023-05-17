@@ -34,5 +34,6 @@
             </form>
         </div>
     @endforeach
+    <a href="{{ route('showStudentOverview') }}" class="btn btn-secondary">Prehľad študentov</a>
 </div>
 @endsection

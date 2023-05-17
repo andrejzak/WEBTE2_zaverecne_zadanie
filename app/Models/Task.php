@@ -18,6 +18,7 @@ class Task extends Model
         'points_max',
         'points_given',
         'task_image',
-        'solution'
+        'solution', 
+        'student_solution'
     ];
 }

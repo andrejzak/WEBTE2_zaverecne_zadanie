@@ -215,3 +215,11 @@
      align-items: center;
      margin: 20px auto;
  }
+
+ .tr-unsubmitted {
+    background-color: #ffe5e5; /* Jemná červená */
+}
+
+.tr-submitted {
+    background-color: #e5ffe5; /* Jemná zelená */
+}
