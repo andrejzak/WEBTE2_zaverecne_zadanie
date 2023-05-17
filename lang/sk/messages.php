@@ -26,5 +26,20 @@ return [
 
                    UČITEĽ dostane prihlasovacie údaje. Po správnom vyplnení sa príhlási do portálu. Učiteľ bude mať možnosť definovať, z ktorých latexových súborov si bude môcť študent generovať príklady na riešenie.
                    
-                   Aj ŠTUDENT aj UČITEĽ si môžu v pravom hornom portálu prepínať medzi uvedenými jazykmi.'
+                   Aj ŠTUDENT aj UČITEĽ si môžu v pravom hornom portálu prepínať medzi uvedenými jazykmi.',
+    'start-date'=>'Dátum začiatku',
+    'points'=>'Počet bodov',
+    'post-task'=>'Zverejniť príklad',
+    'datasets'=> 'Aktuálne datasety na preriešenie',
+    'generate'=>'Vygenerovať príklad',
+    'list'=>'Zoznam prijatých úloh',
+    'hide'=>'Skryť aktuálne dostupné datasety',
+    'task'=>'Úloha',
+    'solution'=>'Riešenie',
+    'task-id' => 'ID úlohy',
+    'max-score'=>'Max. počet bodov',
+    'earned'=>'Počet získaných bodov',
+    'action'=>'Akcia',
+    'score-msg'=>'Body ešte neboli pridelené',
+    'show-task'=>'Zobraziť úlohu'
 ];

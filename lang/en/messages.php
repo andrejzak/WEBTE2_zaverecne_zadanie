@@ -26,5 +26,20 @@ return [
                     
                     TEACHER will receive login information. After filling in correctly, he will log in to the portal. The teacher will be able to define from which latex files the student will be able to generate examples for the solution.
                    
-                    Both STUDENT and TEACHER can switch between the listed languages in the upper right portal.'
+                    Both STUDENT and TEACHER can switch between the listed languages in the upper right portal.',
+  'start-date'=>'Start date',
+  'points'=>'Score',
+  'post-task'=>'Post task',
+  'datasets'=> 'Current datasets to resolve',
+  'generate'=>'Generate task',
+  'list'=> 'List of accepted tasks',
+  'hide'=>'Hide currently available datasets',
+  'task'=>'Task',
+  'solution'=>'Solution',
+  'task-id' => 'Task ID',
+  'max-score'=>'Max. score',
+  'earned'=>'Number of points earned',
+  'action'=>'Action',
+  'score-msg'=>'Points have not been awarded yet',
+  'show-task'=>'Show task'
 ];
