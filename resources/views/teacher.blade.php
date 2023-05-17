@@ -34,6 +34,8 @@
             </form>
         </div>
     @endforeach
-    <a href="{{ route('showStudentOverview') }}" class="btn btn-secondary">{{ __('messages.student-overview') }}</a>
+    <div class="d-flex justify-content-center">
+        <a href="{{ route('showStudentOverview') }}" class="btn btn-secondary">{{ __('messages.student-overview') }}</a>
+    </div>
 </div>
 @endsection

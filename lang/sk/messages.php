@@ -24,7 +24,7 @@ return [
                    Po prihlásení bude mať k dispozícii dve funkcionality. Po kliknutí na tlačidlo "Vygenerovanie príkladov" sa
                    študentovi vygenerujú príklady, ktoré môže začať riešiť. Ako druhé si študent môže pozrieť zadané/vygenerované úlohy po kliknutí na tlačidlo "Prehľad zadaných úloh". Tu študent bude vidieť, ktoré úlohy odovzdal a ktoré nie.
 
-                   UČITEĽ dostane prihlasovacie údaje. Po správnom vyplnení sa príhlási do portálu. Učiteľ bude mať možnosť definovať, z ktorých latexových súborov si bude môcť študent generovať príklady na riešenie.
+                   UČITEĽ dostane prihlasovacie údaje. Po správnom vyplnení sa prihlási do portálu. Učiteľ bude mať možnosť definovať, z ktorých latexových súborov si bude môcť študent generovať príklady na riešenie.
                    
                    Aj ŠTUDENT aj UČITEĽ si môžu v pravom hornom portálu prepínať medzi uvedenými jazykmi.',
     'start-date'=>'Dátum začiatku',
@@ -52,4 +52,12 @@ return [
     'your_solution'=>'Vaše riešenie',
     'submit'=>'Odoslať',
     'all_submitted'=>'Odovzdané riešenie',
+    'how-form'=>'Ako správne formátovať riešenie?',
+    'detail'=>'Detail študenta',
+    'accepted-tasks'=>'Prijaté úlohy',
+    'accepted-msg'=>'Študent zatiaľ neprijal žiadne úlohy na preriešenie.',
+    'not-submit'=>'Neodovzdané',
+    'example-sol'=>'Vzorové riešenie',
+    'not-done'=>'Úloha ešte nebola vypracovaná',
+    'sol-by-student'=>'Riešenie odovzdané študentom',
 ];

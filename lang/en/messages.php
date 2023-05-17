@@ -52,5 +52,13 @@ return [
   'your_solution'=>'Your solution',
   'submit'=>'Submit',
   'all_submitted'=>'Submitted solutions',
+  'how-form'=>'How to format solution?',
+  'detail'=>'Student detail',
+  'accepted-tasks'=>'Accepted tasks',
+  'accepted-msg'=>'The student has not yet accepted any tasks to solve.',
+  'not-submit'=>'Not submitted',
+  'example-sol'=>'Exemplary solution',
+  'not-done'=>'Task has not been completed yet',
+  'sol-by-student'=>'Solution passed by student',
 
 ];

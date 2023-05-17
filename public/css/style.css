@@ -17,7 +17,8 @@
  }
 
  .popover {
-    max-width: 500px; /* Zmena maximálnej šírky popoveru */
+     max-width: 500px;
+     /* Zmena maximálnej šírky popoveru */
  }
 
  .content {
@@ -221,9 +222,23 @@
  }
 
  .tr-unsubmitted {
-    background-color: #ffe5e5; /* Jemná červená */
-}
+     background-color: #ffe5e5;
+     /* Jemná červená */
+ }
 
-.tr-submitted {
-    background-color: #e5ffe5; /* Jemná zelená */
-}
+ .tr-submitted {
+     background-color: #e5ffe5;
+     /* Jemná zelená */
+ }
+
+ .form-check {
+     width: 250px;
+     margin: 20px auto;
+     border: 1px solid gray;
+     border-radius: 3px;
+ }
+
+ .gen-btn {
+     width: 250px;
+     margin-top: 20px;
+ }

@@ -13,11 +13,11 @@
                 <div class="col-lg-12 col-md-12 text-center" id="tasksSection" style="display:none">
                         @foreach ($taskSets as $taskSet)
                             <div class="form-check bg-light">
-                                <input type="checkbox" class="form-check-input" name="selectedFiles[]" value="{{ $taskSet->id }}" id="file-{{$taskSet->id}}">
+                                <input type="checkbox" class="form-check-input ms-2" name="selectedFiles[]" value="{{ $taskSet->id }}" id="file-{{$taskSet->id}}">
                                 <label for="file-{{$taskSet->id}}" class="form-check-label">{{$taskSet->file_path}}</label>
                             </div>
                         @endforeach
-                        <button class="btn btn-success" type="submit" value="Vygenerovať príklad">{{ __('messages.generate') }}</button>   
+                        <button class="btn btn-success gen-btn" type="submit" value="Vygenerovať príklad">{{ __('messages.generate') }}</button>   
                 </div>
             </form>
         @endif 

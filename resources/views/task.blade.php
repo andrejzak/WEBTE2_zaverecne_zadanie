@@ -14,7 +14,7 @@
                 <p>{{ __('messages.not_submitted') }}</p>
                 <button id="displayFormBtn" class="btn btn-info">{{ __('messages.insert_solution') }}</button>
                 <button id="popoverBtn" type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-html="true">
-                    Ako správne formátovať riešenie?
+                    {{ __('messages.how-form') }}
                 </button>
                 <div class="row" id="solutionForm" style="display:none">
                     <div class="col-lg-12 col-md-12 text-center">
@@ -39,9 +39,9 @@ $(document).ready(function() {
         $("#solutionForm").show();
     });
     var popoverContent = `<pre><code>
-&lt;begin{equation*}&gt;
+&bsol;begin{equation*}
     \\dfrac{2s^2+13s}{s^3+7s^2+18s}
-&lt;end{equation*}&gt;
+&bsol;end{equation*}
 </code></pre>`;
     $("#popoverBtn").popover({
         content: popoverContent
