@@ -16,6 +16,10 @@
      flex-direction: column;
  }
 
+ .popover {
+    max-width: 500px; /* Zmena maximálnej šírky popoveru */
+ }
+
  .content {
      flex: 1 0 auto;
      margin-top: 3rem;
