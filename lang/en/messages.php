@@ -41,5 +41,7 @@ return [
   'earned'=>'Number of points earned',
   'action'=>'Action',
   'score-msg'=>'Points have not been awarded yet',
-  'show-task'=>'Show task'
+  'show-task'=>'Show task',
+  'student-overview'=>'Student overview',
+
 ];

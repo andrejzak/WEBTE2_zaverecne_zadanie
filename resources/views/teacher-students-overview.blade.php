@@ -14,12 +14,12 @@
                     <th>{{ __('messages.submitted_tasks') }}</th>
                     <th>{{ __('messages.total_points') }}</th> -->
                     <th>>ID študenta</th>
-                    <th>Meno</th>
-                    <th>Priezvisko</th>
+                    <th>{{ __('messages.name') }}</th>
+                    <th>{{ __('messages.surname') }}</th>
                     <th>Vygenerované príklady celkovo</th>
                     <th>Odovzdané príklady celkovo</th>
                     <th>Body celkovo</th>
-                    <th>Akcia</th>
+                    <th>{{ __('messages.action') }}</th>
                 </tr>
             </thead>
             <tbody>

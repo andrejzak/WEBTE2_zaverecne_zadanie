@@ -41,5 +41,6 @@ return [
     'earned'=>'Počet získaných bodov',
     'action'=>'Akcia',
     'score-msg'=>'Body ešte neboli pridelené',
-    'show-task'=>'Zobraziť úlohu'
+    'show-task'=>'Zobraziť úlohu',
+    'student-overview'=>'Prehľad študentov',
 ];

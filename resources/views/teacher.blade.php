@@ -34,6 +34,6 @@
             </form>
         </div>
     @endforeach
-    <a href="{{ route('showStudentOverview') }}" class="btn btn-secondary">Prehľad študentov</a>
+    <a href="{{ route('showStudentOverview') }}" class="btn btn-secondary">{{ __('messages.student-overview') }}</a>
 </div>
 @endsection
