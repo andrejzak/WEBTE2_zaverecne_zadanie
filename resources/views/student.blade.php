@@ -17,27 +17,36 @@
                                 <label for="file-{{$taskSet->id}}" class="form-check-label">{{$taskSet->file_path}}</label>
                             </div>
                         @endforeach
-                        <button class="btn btn-info" type="submit" value="Vygenerovať príklad">Vygenerovať príklad</button>   
+                        <button class="btn btn-success" type="submit" value="Vygenerovať príklad">Vygenerovať príklad</button>   
                 </div>
             </form>
         @endif 
-
-        @if(session('task') && session('solution'))
-            <div class="col-lg-12 col-md-12 text-center">
-                <h2>Úloha: {{session('taskId')}}</h2>
-                <p>{!! e(session('task')) !!}</p>
-                @if(session('image') !== '')
-                    <img src="{{ asset('img/images/' . session('image')) }}" class="img-fluid" alt="Task image">
-                @endif
-                <h2>Riešenie</h2>
-                <p>{!! e(session('solution')) !!}</p>
-            </div>
-        @endif
+        <div class="col-lg-12 col-md-12 text-center">
+            <a href="/tasks/accepted" class="btn btn-info">Zoznam prijatých úloh</a>
+        </div>
     </div>
 </div>
 <script>
-    document.getElementById("showTasksButton").addEventListener("click", function() {
-        document.getElementById("tasksSection").style.display = "block";
+    $(document).ready(function (){
+        $('#showTasksButton').click(function () {
+            $('#tasksSection').toggle();
+            if($('#showTasksButton').hasClass('btn-info')){
+                $('#showTasksButton').html("Skryť aktuálne dostupné datasety");
+                $('#showTasksButton').removeClass('btn-info');
+                $('#showTasksButton').addClass('btn-danger');
+            }
+            else{
+                $('#showTasksButton').html("Aktuálne datasety na preriešenie");
+                $('#showTasksButton').removeClass('btn-danger');
+                $('#showTasksButton').addClass('btn-info');
+            }
+        });
+        $('form').on('submit', function(e){
+            if($('input[type=checkbox]:checked').length == 0){
+                e.preventDefault();
+                alert('Vyberte aspoň jeden súbor pre generovanie príkladu!');
+            }
+        });
     });
 </script>
 @endsection

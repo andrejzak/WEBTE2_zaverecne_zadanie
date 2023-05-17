@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ExportController;
 use App\Http\Controllers\LatexFileController;
+use App\Http\Controllers\TasksController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,14 +42,17 @@ Route::group(['middleware' => 'auth'], function () {
 
     //routes for students
     Route::group(['middleware' => 'role:student'], function () {
-        Route::get('/student', function () {
-            return view('student');
-        })->name('student');
+        Route::get('/student', [LatexFileController::class, 'showAvailableTaskSets'])->name('student');
+        Route::get('/student/generate', function () {return view('student');})->name('student.generate');
+        Route::post('/generateRandomTask', [LatexFileController::class, 'generateRandomTask'])->name('generateRandomTask');
+        Route::get('/tasks/accepted', [TasksController::class, 'showAcceptedTasks'])->name('tasks.accepted');
+        Route::get('/task/{task_id}', [TasksController::class, 'showTask'])->name('task.show');
     });
 
     //routes for teacher
     Route::group(['middleware' => 'role:teacher'], function () {
         Route::get('/teacher', [LatexFileController::class, 'showFiles'])->name('teacher');
+        Route::post('/addFile', [LatexFileController::class, 'addFile'])->name('addFile');
     });
 });
 
@@ -67,7 +71,4 @@ Route::get('language/{language}', function ($language) {
 
 Route::get('/export/csv', [ExportController::class, 'exportCsv'])->name('export.csv');
 Route::get('/export/pdf', [ExportController::class, 'exportPdf'])->name('export.pdf');
-Route::post('/addFile', [LatexFileController::class, 'addFile'])->name('addFile');
-Route::get('/student/generate', function () {return view('student');})->name('student.generate');
-Route::get('/student', [LatexFileController::class, 'showAvailableTaskSets'])->name('showAvailableTaskSets');
-Route::post('/generateRandomTask', [LatexFileController::class, 'generateRandomTask'])->name('generateRandomTask');
+

@@ -78,6 +78,8 @@
       @yield('teacher')
       @yield('guide')
       @yield('main')
+      @yield('task')
+      @yield('tasks-accepted')
   </main>
   <footer>
       <div class="container">VR-AŽ-TS-MR &copy; 2023</div>
