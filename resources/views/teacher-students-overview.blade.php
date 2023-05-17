@@ -13,12 +13,12 @@
                     <th>{{ __('messages.generated_tasks') }}</th>
                     <th>{{ __('messages.submitted_tasks') }}</th>
                     <th>{{ __('messages.total_points') }}</th> -->
-                    <th>>ID študenta</th>
+                    <th>{{ __('messages.student_id') }}</th>
                     <th>{{ __('messages.name') }}</th>
                     <th>{{ __('messages.surname') }}</th>
-                    <th>Vygenerované príklady celkovo</th>
-                    <th>Odovzdané príklady celkovo</th>
-                    <th>Body celkovo</th>
+                    <th>{{ __('messages.generated_tasks') }}</th>
+                    <th>{{ __('messages.submitted_tasks') }}</th>
+                    <th>{{ __('messages.total_points') }}</th>
                     <th>{{ __('messages.action') }}</th>
                 </tr>
             </thead>
@@ -31,7 +31,7 @@
                         <td>{{ $student->generated_tasks }}</td>
                         <td>{{ $student->submitted_tasks }}</td>
                         <td>{{ $student->total_points }}</td>
-                        <td><a class="btn btn-primary" href="{{ route('showStudentDetail', $student->id) }}">Detail</a></td>
+                        <td><a class="btn btn-secondary" href="{{ route('showStudentDetail', $student->id) }}">Detail</a></td>
                     </tr>
                 @endforeach
             </tbody>

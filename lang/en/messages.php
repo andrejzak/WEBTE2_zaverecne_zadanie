@@ -43,5 +43,14 @@ return [
   'score-msg'=>'Points have not been awarded yet',
   'show-task'=>'Show task',
   'student-overview'=>'Student overview',
+  'student_id'=>'Student ID',
+  'total_points'=>'Total points',
+  'generated_tasks'=>'Generated tasks',
+  'submitted_tasks'=>'Submitted tasks',
+  'not_submitted'=>'The task solution has not been submitted yet',
+  'insert_solution'=>'Upload your solution',
+  'your_solution'=>'Your solution',
+  'submit'=>'Submit',
+  'all_submitted'=>'Submitted solutions',
 
 ];

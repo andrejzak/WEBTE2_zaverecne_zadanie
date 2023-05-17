@@ -11,20 +11,23 @@
             @endif
             <h2>{{ __('messages.solution') }}</h2>
             @if($task->student_solution == null)
-                <p>Riešenie úlohy zatiaľ nebolo odovzdané</p>
-                <button id="displayFormBtn" class="btn btn-primary">Vložiť riešenie</button>
+                <!-- <p>Riešenie úlohy zatiaľ nebolo odovzdané</p> -->
+                <p>{{ __('messages.not_submitted') }}</p>
+                <button id="displayFormBtn" class="btn btn-info">{{ __('messages.insert_solution') }}</button>
                 <div class="row" id="solutionForm" style="display:none">
                     <div class="col-lg-12 col-md-12 text-center">
                         <form class="form-floating" method="post" action="{{ route('submitSolution', $task->id) }}">
                             @csrf
                             <textarea class="form-control" id="solutionInput" name="solution" required style="height: 100px" ></textarea>
-                            <label for="solutionInput">Vaše riešenie</label>
-                            <button type="submit" class="btn btn-primary">Odoslať riešenie</button>
+                            <!-- <label for="solutionInput">Vaše riešenie</label> -->
+                            <label for="solutionInput">{{ __('messages.your_solution') }}</label>
+                            <button type="submit" class="btn btn-info">{{ __('messages.submit') }}</button>
                         </form>
                     </div>
                 </div>
             @else
-                <p>Odovzdané riešenie</p>
+                <!-- <p>Odovzdané riešenie</p> -->
+                <p>{{ __('messages.all_submitted') }}</p>
                 <p>{!! e($task->student_solution) !!}</p>
             @endif
         </div>

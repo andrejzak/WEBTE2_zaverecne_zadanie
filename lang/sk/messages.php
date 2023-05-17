@@ -43,4 +43,13 @@ return [
     'score-msg'=>'Body ešte neboli pridelené',
     'show-task'=>'Zobraziť úlohu',
     'student-overview'=>'Prehľad študentov',
+    'student_id'=>'ID študenta',
+    'total_points'=>'Celkový počet bodov',
+    'generated_tasks'=>'Vygenerované úlohy',
+    'submitted_tasks'=>'Odovzdané úlohy',
+    'not_submitted'=>'Riešenie úlohy zatiaľ nebolo odovzdané',
+    'insert_solution'=>'Vložiť riešenie',
+    'your_solution'=>'Vaše riešenie',
+    'submit'=>'Odoslať',
+    'all_submitted'=>'Odovzdané riešenie',
 ];
