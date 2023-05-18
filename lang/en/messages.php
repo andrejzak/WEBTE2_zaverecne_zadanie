@@ -36,7 +36,7 @@ return [
   'hide'=>'Hide currently available datasets',
   'task'=>'Task',
   'solution'=>'Solution',
-  'task-id' => 'Task ID',
+  'task-id' => 'Task Id',
   'max-score'=>'Max. score',
   'earned'=>'Number of points earned',
   'action'=>'Action',

@@ -36,7 +36,7 @@ return [
     'hide'=>'Skryť aktuálne dostupné datasety',
     'task'=>'Úloha',
     'solution'=>'Riešenie',
-    'task-id' => 'ID úlohy',
+    'task-id' => 'Id úlohy',
     'max-score'=>'Max. počet bodov',
     'earned'=>'Počet získaných bodov',
     'action'=>'Akcia',
